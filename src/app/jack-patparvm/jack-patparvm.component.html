@@ -1,0 +1,29 @@
+
+<mat-grid-list cols="3" rowHeight="200px">     
+
+    <mat-grid-tile>
+        <h1 [ngClass]="{
+        'REDpatparvm': patparvmSuit === 'Hearts' || patparvmSuit === 'Diamonds',
+        'BLACKpatparvm': patparvmSuit === 'Spades' || patparvmSuit === 'Clubs'
+        }">
+            {{patparvmTitle}}
+        </h1>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <img [src]="patparvmImage" [id]="patparvmSuit" alt="Jack Of Clubs" width="105px">
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <section style="margin: 10px;">
+        <div style="display: flex;">
+            <button style="flex: 1; height: 40px;" mat-raised-button color="primary" (click)="patparvmRotate(patparvmSuit, patparvmDegree)">Click to Turn Card 280 degrees</button>
+        </div>
+        <br>
+        <div>
+            <button style="flex: 1; height: 40px;" mat-raised-button color="accent" (click)="patparvmRotate(patparvmSuit, patparvmZero)">Click to Turn Card Back to 0 degrees</button>
+        </div>
+    </section>
+    </mat-grid-tile>
+
+</mat-grid-list>
